@@ -23,19 +23,23 @@ app.autodiscover_tasks()
 
 @app.task(bind=True)
 def debug_task(self):
-    print("in debug task")
-    #print('Request: {0!r}'.format(self.request))
-
-@app.task(bind=True)
-def copy_file(self):
-    #src = "C:\\Users\\salman\\Desktop\\LinkedIn Learning\\Python\\Ex_Files_Learning_Python_Upd\\Exercise Files\\source\\file.txt"
-    #dest = "C:\\Users\\salman\\Desktop\\LinkedIn Learning\\Python\\Ex_Files_Learning_Python_Upd\\Exercise Files\\destination\\file.txt" 
-    #dir = "fff"
-    curDT = datetime.now()
-    date_time = curDT.strftime("%m-%d-%Y %H_%M_%S")
-    dest = "C:\\Users\\salman\\Desktop\\LinkedIn Learning\\Python\\Ex_Files_Learning_Python_Upd\\Exercise Files\\destination"
-    path = os.path.join(dest, date_time)
-    time.sleep(10);
-    os.mkdir(path)
-    #shutil.copyfile(src, dest)
-    print("hello1")
+    print(f'Request: {self.request!r}')
+    
+#@app.task(bind=True)
+#def debug_task(self):
+#    print("in debug task")
+#    #print('Request: {0!r}'.format(self.request))
+#
+#@app.task(bind=True)
+#def copy_file(self):
+#    #src = "C:\\Users\\salman\\Desktop\\LinkedIn Learning\\Python\\Ex_Files_Learning_Python_Upd\\Exercise Files\\source\\file.txt"
+#    #dest = "C:\\Users\\salman\\Desktop\\LinkedIn Learning\\Python\\Ex_Files_Learning_Python_Upd\\Exercise Files\\destination\\file.txt" 
+#    #dir = "fff"
+#    curDT = datetime.now()
+#    date_time = curDT.strftime("%m-%d-%Y %H_%M_%S")
+#    dest = "C:\\Users\\salman\\Desktop\\LinkedIn Learning\\Python\\Ex_Files_Learning_Python_Upd\\Exercise Files\\destination"
+#    path = os.path.join(dest, date_time)
+#    time.sleep(10);
+#    os.mkdir(path)
+#    #shutil.copyfile(src, dest)
+#    print("hello1")
